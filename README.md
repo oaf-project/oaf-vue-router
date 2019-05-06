@@ -60,10 +60,10 @@ const settings = {
   // This assumes you're setting the document title via some other means.
   // If you're not, you should return a unique and descriptive page title for each page
   // from this function and set `setPageTitle` to true.
-  documentTitle: (location: Navigation) => new Promise(resolve => setTimeout(() => resolve(document.title))),
+  documentTitle: (route: Route) => new Promise(resolve => setTimeout(() => resolve(document.title))),
   // BYO localization
-  navigationMessage: (title: string, location: Navigation): string => `Navigated to ${title}.`,
-  shouldHandleAction: (previousLocation: Navigation, nextLocation: Navigation) => true,
+  navigationMessage: (title: string, route: Route): string => `Navigated to ${title}.`,
+  shouldHandleAction: (previousRoute: Route, nextRoute: Route) => true,
   announcePageNavigation: true,
   setPageTitle: false,
 };
