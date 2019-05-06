@@ -34,8 +34,6 @@ npm install oaf-vue-router
 
 ## Basic Usage
 
-`app.module.ts`:
-
 ```diff
 import VueRouter from "vue-router";
 + import { wrapRouter } from "oaf-vue-router";
