@@ -45,8 +45,6 @@ const router = new VueRouter({
 });
 
 + wrapRouter(router);
-
-
 ```
 
 ## Advanced Usage
