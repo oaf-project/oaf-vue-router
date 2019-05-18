@@ -8,6 +8,7 @@ import VueRouter, { Route } from "vue-router";
 // tslint:disable-next-line: no-commented-code
 // tslint:disable: no-expression-statement
 // tslint:disable: object-literal-sort-keys
+// tslint:disable: no-if-statement
 
 export { RouterSettings } from "oaf-routing";
 
@@ -30,10 +31,18 @@ export const wrapRouter = (
 
   const oafRouter = createOafRouter(settings, location => location.hash);
 
-  oafRouter.handleFirstPageLoad(router.currentRoute);
-
   const unregister = router.afterEach((to, from) => {
-    oafRouter.handleLocationChanged(from, to, undefined, undefined);
+    if (from.name === null) {
+      // HACK Allow DOM updates to happen before we repair focus.
+      setTimeout(() => {
+        oafRouter.handleFirstPageLoad(to);
+      }, settings.renderTimeout);
+    } else {
+      // HACK Allow DOM updates to happen before we repair focus.
+      setTimeout(() => {
+        oafRouter.handleLocationChanged(from, to, undefined, undefined);
+      }, settings.renderTimeout);
+    }
   });
 
   return () => {
