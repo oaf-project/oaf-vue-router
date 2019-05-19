@@ -23,7 +23,7 @@
     "vue-router": "^3.0.6"
   },
   "dependencies": {
-    "oaf-routing": "^2.0.0"
+    "oaf-routing": "^3.0.0"
   },
   "scripts": {
     "build": "tsc",
