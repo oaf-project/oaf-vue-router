@@ -94,3 +94,4 @@ All that said, if you absolutely _must_ remove focus outlines (stubborn client, 
 ## See also
 * [Oaf Routing](https://github.com/oaf-project/oaf-routing)
 * [Oaf Side Effects](https://github.com/oaf-project/oaf-side-effects)
+* [vue-a11y](https://github.com/vue-a11y)
