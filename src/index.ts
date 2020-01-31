@@ -31,18 +31,24 @@ export const wrapRouter = (
 
   const oafRouter = createOafRouter(settings, location => location.hash);
 
+  /**
+   * https://router.vuejs.org/api/#router-onready
+   * This method queues a callback to be called when the router has completed the initial navigation,
+   * which means it has resolved all async enter hooks and async components that are associated with
+   * the initial route.
+   */
+  router.onReady(() => {
+    // HACK Allow DOM updates to happen before we repair focus.
+    setTimeout(() => {
+      oafRouter.handleFirstPageLoad(router.currentRoute);
+    }, settings.renderTimeout);
+  });
+
   const unregister = router.afterEach((to, from) => {
-    if (from.name === null) {
-      // HACK Allow DOM updates to happen before we repair focus.
-      setTimeout(() => {
-        oafRouter.handleFirstPageLoad(to);
-      }, settings.renderTimeout);
-    } else {
-      // HACK Allow DOM updates to happen before we repair focus.
-      setTimeout(() => {
-        oafRouter.handleLocationChanged(from, to, undefined, undefined);
-      }, settings.renderTimeout);
-    }
+    // HACK Allow DOM updates to happen before we repair focus.
+    setTimeout(() => {
+      oafRouter.handleLocationChanged(from, to, undefined, undefined);
+    }, settings.renderTimeout);
   });
 
   return () => {

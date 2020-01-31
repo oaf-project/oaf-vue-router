@@ -27,7 +27,27 @@ describe("oaf-vue-router", () => {
     app.$destroy();
   });
 
-  test("sets the document title", async () => {
+  test("sets the document title after initial render", async () => {
+    const Vue = createLocalVue();
+    Vue.use(VueRouter);
+    const router = new VueRouter({ mode: "hash", routes: [{path: "/"}, {path: "/foo"}] });
+    const app = new Vue({router});
+    const unwrap = wrapRouter(router, {
+      setPageTitle: true,
+      documentTitle: () => "test title",
+    });
+
+    expect(document.title).toBe("");
+
+    await waitForDomUpdate();
+
+    expect(document.title).toBe("test title");
+
+    unwrap();
+    app.$destroy();
+  });
+
+  test("sets the document title after a navigation", async () => {
     const Vue = createLocalVue();
     Vue.use(VueRouter);
     const router = new VueRouter({ mode: "hash", routes: [{path: "/"}, {path: "/foo"}] });
