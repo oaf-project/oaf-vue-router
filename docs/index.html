@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> oaf-vue-router</h1>
+			<h1>oaf-vue-router</h1>
 		</div>
 	</div>
 </header>
@@ -63,16 +63,21 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<p><a href="https://travis-ci.org/oaf-project/oaf-vue-router"><img src="https://travis-ci.org/oaf-project/oaf-vue-router.svg?branch=master" alt="Build Status"></a>
+					<a href="https://github.com/plantain-00/type-coverage"><img src="https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Foaf-project%2Foaf-vue-router%2Fmaster%2Fpackage.json" alt="type-coverage"></a>
 					<a href="https://snyk.io/test/github/oaf-project/oaf-vue-router?targetFile=package.json"><img src="https://snyk.io/test/github/oaf-project/oaf-vue-router/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
 					<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/oaf-project/oaf-vue-router.svg" alt="Greenkeeper badge"></a>
 				<a href="https://www.npmjs.com/package/oaf-vue-router"><img src="https://img.shields.io/npm/v/oaf-vue-router.svg" alt="npm"></a></p>
 				<p><a href="https://david-dm.org/oaf-project/oaf-vue-router"><img src="https://david-dm.org/oaf-project/oaf-vue-router/status.svg" alt="dependencies Status"></a>
 					<a href="https://david-dm.org/oaf-project/oaf-vue-router?type=dev"><img src="https://david-dm.org/oaf-project/oaf-vue-router/dev-status.svg" alt="devDependencies Status"></a>
 				<a href="https://david-dm.org/oaf-project/oaf-vue-router?type=peer"><img src="https://david-dm.org/oaf-project/oaf-vue-router/peer-status.svg" alt="peerDependencies Status"></a></p>
-				<h1 id="oaf-vue-router">Oaf Vue Router</h1>
+				<a href="#oaf-vue-router" id="oaf-vue-router" style="color: inherit; text-decoration: none;">
+					<h1>Oaf Vue Router</h1>
+				</a>
 				<p>An accessible wrapper for <a href="https://router.vuejs.org/">Vue Router</a>.</p>
 				<p>Documentation at <a href="https://oaf-project.github.io/oaf-vue-router/">https://oaf-project.github.io/oaf-vue-router/</a></p>
-				<h2 id="features">Features</h2>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
 				<ul>
 					<li>Reset scroll and focus after page navigation</li>
 					<li>Set the page title after navigation</li>
@@ -80,13 +85,17 @@
 					<li>Hash fragment support</li>
 				</ul>
 				<p>In lieu of more details, see <a href="https://github.com/oaf-project/oaf-react-router/blob/master/README.md#features">Oaf React Router</a> for now. The features are basically the same, with the caveat that Oaf Vue Router doesn&#39;t currently support focus and scroll restoration after POP navigation (see <a href="https://github.com/oaf-project/oaf-vue-router/issues/1">issue #1</a>).</p>
-				<h2 id="installation">Installation</h2>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
 				<pre><code class="language-sh"><span class="hljs-comment"># yarn</span>
 yarn add oaf-vue-router
 
 <span class="hljs-comment"># npm</span>
 npm install oaf-vue-router</code></pre>
-				<h2 id="basic-usage">Basic Usage</h2>
+				<a href="#basic-usage" id="basic-usage" style="color: inherit; text-decoration: none;">
+					<h2>Basic Usage</h2>
+				</a>
 				<pre><code class="language-diff">import VueRouter from "vue-router";
 <span class="hljs-addition">+ import { wrapRouter } from "oaf-vue-router";</span>
 
@@ -97,7 +106,9 @@ const router = new VueRouter({
 });
 
 <span class="hljs-addition">+ wrapRouter(router);</span></code></pre>
-				<h2 id="advanced-usage">Advanced Usage</h2>
+				<a href="#advanced-usage" id="advanced-usage" style="color: inherit; text-decoration: none;">
+					<h2>Advanced Usage</h2>
+				</a>
 				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> settings = {
   announcementsDivId: <span class="hljs-string">"announcements"</span>,
   primaryFocusTarget: <span class="hljs-string">"main h1, [role=main] h1"</span>,
@@ -116,10 +127,12 @@ const router = new VueRouter({
 };
 
 wrapRouter(router, settings);</code></pre>
-				<h3 id="a-note-on-focus-outlines">A note on focus outlines</h3>
+				<a href="#a-note-on-focus-outlines" id="a-note-on-focus-outlines" style="color: inherit; text-decoration: none;">
+					<h3>A note on focus outlines</h3>
+				</a>
 				<p>You may see focus outlines around your <code>h1</code> elements (or elsewhere, per <code>primaryFocusTarget</code>) when using Oaf Vue Router.</p>
 				<p>You might be tempted to remove these focus outlines with something like the following:</p>
-				<pre><code class="language-css"><span class="hljs-selector-attr">[tabindex="-1"]</span><span class="hljs-selector-pseudo">:focus</span> {
+				<pre><code class="language-css"><span class="hljs-selector-attr">[tabindex=<span class="hljs-string">"-1"</span>]</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
 }</code></pre>
 				<p>Don&#39;t do this! Focus outlines are important for accessibility. See for example:</p>
@@ -130,10 +143,13 @@ wrapRouter(router, settings);</code></pre>
 				</ul>
 				<p>Note that <a href="https://github.com/twbs/bootstrap/issues/28425">Bootstrap 4 unfortunately removes these focus outlines</a>. If you use Bootstrap, you can restore them with <a href="https://github.com/oaf-project/oaf-bootstrap-4">Oaf Bootstrap 4</a>.</p>
 				<p>All that said, if you absolutely <em>must</em> remove focus outlines (stubborn client, stubborn boss, stubborn designer, whatever), consider using the <a href="https://github.com/WICG/focus-visible"><code>:focus-visible</code> polyfill</a> so focus outlines are only hidden from mouse users, <em>not</em> keyboard users.</p>
-				<h2 id="see-also">See also</h2>
+				<a href="#see-also" id="see-also" style="color: inherit; text-decoration: none;">
+					<h2>See also</h2>
+				</a>
 				<ul>
 					<li><a href="https://github.com/oaf-project/oaf-routing">Oaf Routing</a></li>
 					<li><a href="https://github.com/oaf-project/oaf-side-effects">Oaf Side Effects</a></li>
+					<li><a href="https://github.com/vue-a11y">vue-a11y</a></li>
 				</ul>
 			</div>
 		</div>
@@ -144,7 +160,7 @@ wrapRouter(router, settings);</code></pre>
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
+						<a href="modules/_index_.html">&quot;index&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -167,6 +183,7 @@ wrapRouter(router, settings);</code></pre>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -215,7 +232,7 @@ wrapRouter(router, settings);</code></pre>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
