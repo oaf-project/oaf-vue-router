@@ -5,7 +5,7 @@ import { wrapRouter } from ".";
 
 // HACK: wait for router wrapper to update DOM.
 const waitForDomUpdate = (): Promise<void> =>
-  new Promise(resolve => setTimeout(() => setTimeout(resolve)));
+  new Promise(resolve => setTimeout(resolve));
 
 beforeEach(() => {
   // Clear previous test's DOM.
@@ -14,7 +14,7 @@ beforeEach(() => {
 });
 
 describe("oaf-vue-router", () => {
-  test("doesn't throw when wrapping and unwrapping history", () => {
+  test("doesn't throw when wrapping and unwrapping router", () => {
     const router = new VueRouter();
     const unwrap = wrapRouter(router);
     unwrap();
