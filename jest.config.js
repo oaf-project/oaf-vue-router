@@ -8,10 +8,10 @@ module.exports = {
   "collectCoverage": true,
   "coverageThreshold": {
     "global": {
-      "branches": 50,
-      "functions": 83.33,
-      "lines": 85.71,
-      "statements": 86.67
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
     }
   },
   // We mess with globals (window, document) in the tests so
