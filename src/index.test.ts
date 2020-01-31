@@ -20,7 +20,7 @@ describe("oaf-vue-router", () => {
     const Vue = createLocalVue();
     Vue.use(VueRouter);
     const router = new VueRouter({ mode: "hash" });
-    const app = new Vue({router});
+    const app = new Vue({ router });
     const unwrap = wrapRouter(router);
 
     unwrap();
@@ -30,8 +30,11 @@ describe("oaf-vue-router", () => {
   test("sets the document title after initial render", async () => {
     const Vue = createLocalVue();
     Vue.use(VueRouter);
-    const router = new VueRouter({ mode: "hash", routes: [{path: "/"}, {path: "/foo"}] });
-    const app = new Vue({router});
+    const router = new VueRouter({
+      mode: "hash",
+      routes: [{ path: "/" }, { path: "/foo" }],
+    });
+    const app = new Vue({ router });
     const unwrap = wrapRouter(router, {
       setPageTitle: true,
       documentTitle: () => "test title",
@@ -50,8 +53,11 @@ describe("oaf-vue-router", () => {
   test("sets the document title after a navigation", async () => {
     const Vue = createLocalVue();
     Vue.use(VueRouter);
-    const router = new VueRouter({ mode: "hash", routes: [{path: "/"}, {path: "/foo"}] });
-    const app = new Vue({router});
+    const router = new VueRouter({
+      mode: "hash",
+      routes: [{ path: "/" }, { path: "/foo" }],
+    });
+    const app = new Vue({ router });
     const unwrap = wrapRouter(router, {
       setPageTitle: true,
       documentTitle: () => "test title",
@@ -72,8 +78,11 @@ describe("oaf-vue-router", () => {
   test("does not set the document title when setPageTitle is false", async () => {
     const Vue = createLocalVue();
     Vue.use(VueRouter);
-    const router = new VueRouter({ mode: "hash", routes: [{path: "/"}, {path: "/foo"}] });
-    const app = new Vue({router});
+    const router = new VueRouter({
+      mode: "hash",
+      routes: [{ path: "/" }, { path: "/foo" }],
+    });
+    const app = new Vue({ router });
     const unwrap = wrapRouter(router, {
       setPageTitle: false,
       documentTitle: () => "test title",
@@ -94,8 +103,11 @@ describe("oaf-vue-router", () => {
   test("leaves focus alone when repairFocus is false", async () => {
     const Vue = createLocalVue();
     Vue.use(VueRouter);
-    const router = new VueRouter({ mode: "hash", routes: [{path: "/"}, {path: "/foo"}] });
-    const app = new Vue({router});
+    const router = new VueRouter({
+      mode: "hash",
+      routes: [{ path: "/" }, { path: "/foo" }],
+    });
+    const app = new Vue({ router });
     const unwrap = wrapRouter(router, { repairFocus: false });
 
     const main = document.createElement("main");
@@ -121,8 +133,11 @@ describe("oaf-vue-router", () => {
   test("moves focus to body when primary focus target cannot be focused", async () => {
     const Vue = createLocalVue();
     Vue.use(VueRouter);
-    const router = new VueRouter({ mode: "hash", routes: [{path: "/"}, {path: "/foo"}] });
-    const app = new Vue({router});
+    const router = new VueRouter({
+      mode: "hash",
+      routes: [{ path: "/" }, { path: "/foo" }],
+    });
+    const app = new Vue({ router });
     const unwrap = wrapRouter(router);
 
     const main = document.createElement("main");
@@ -151,8 +166,11 @@ describe("oaf-vue-router", () => {
   test("moves focus to the primary focus target", async () => {
     const Vue = createLocalVue();
     Vue.use(VueRouter);
-    const router = new VueRouter({ mode: "hash", routes: [{path: "/"}, {path: "/foo"}] });
-    const app = new Vue({router});
+    const router = new VueRouter({
+      mode: "hash",
+      routes: [{ path: "/" }, { path: "/foo" }],
+    });
+    const app = new Vue({ router });
     const unwrap = wrapRouter(router);
 
     const main = document.createElement("main");
@@ -164,7 +182,7 @@ describe("oaf-vue-router", () => {
       document.activeElement,
     );
 
-    await router.push({path: "/foo"});
+    await router.push({ path: "/foo" });
 
     await waitForDomUpdate();
 
