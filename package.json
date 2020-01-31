@@ -1,6 +1,6 @@
 {
   "name": "oaf-vue-router",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "An accessible wrapper for Vue Router.",
   "repository": "https://github.com/oaf-project/oaf-vue-router",
   "author": "Daniel Nixon <dan.nixon@gmail.com>",
