@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/oaf-project/oaf-vue-router.svg?branch=master)](https://travis-ci.org/oaf-project/oaf-vue-router)
 [![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Foaf-project%2Foaf-vue-router%2Fmaster%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/oaf-project/oaf-vue-router/badge.svg?targetFile=package.json)](https://snyk.io/test/github/oaf-project/oaf-vue-router?targetFile=package.json)
-[![Greenkeeper badge](https://badges.greenkeeper.io/oaf-project/oaf-vue-router.svg)](https://greenkeeper.io/)
 [![npm](https://img.shields.io/npm/v/oaf-vue-router.svg)](https://www.npmjs.com/package/oaf-vue-router)
 
 [![dependencies Status](https://david-dm.org/oaf-project/oaf-vue-router/status.svg)](https://david-dm.org/oaf-project/oaf-vue-router)
